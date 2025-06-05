@@ -15,12 +15,19 @@
 html {
   scroll-behavior: smooth;
 }
-body{
+body {
   font-family: "Poppins", sans-serif;
   font-size: $normal-font-size;
+  background-color: $body-color;
+  color: $text-color;
 }
 
-/* REUSABLE CSS CLASSES */
+h1,
+h2,
+h3 {
+  color: $title-color;
+  font-weight: $font-semi-bold;
+}
 .section {
   padding: 6rem 0 2rem;
 }
@@ -38,14 +45,30 @@ body{
   text-align: center;
 }
 
-
+.system__grid {
+  display: grid;
+  gap: 1.5rem;
+}
 
 .container {
-  @media screen and (max-width: $max_mobile) {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: $max_mobile) {
+  .container {
     padding: 0 0.75rem;
   }
+  .section {
+    padding: 2rem 0 4rem;
+  }
+  .section__subtitle {
+    margin-bottom: 3rem;
+  }
+}
 
-  @media screen and (max-width: $max_small_mobile) {
+@media screen and (max-width: $max_small_mobile) {
+  .container {
     padding: 0 0.5rem;
   }
 }
