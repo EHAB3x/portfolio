@@ -16,6 +16,7 @@
   .home__scroll-arrow {
     font-size: 1.25rem;
     color: $title-color;
+    display: flex;
   }
   @media screen and (max-width: 992px) {
     .home__scroll {
