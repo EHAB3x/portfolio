@@ -4,10 +4,10 @@ import { socialLinks } from '../../../../core/constants/socialLinks';
 import { CommonModule } from '@angular/common';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
-  bootstrapGithub,
-  bootstrapLinkedin,
-  bootstrapTwitterX,
-} from '@ng-icons/bootstrap-icons';
+  featherLinkedin,
+  featherGithub,
+  featherTwitter,
+} from '@ng-icons/feather-icons';
 
 @Component({
   selector: 'app-hero-social-links',
@@ -16,9 +16,9 @@ import {
   styleUrl: './hero-social-links.component.scss',
   viewProviders: [
     provideIcons({
-      bootstrapLinkedin,
-      bootstrapGithub,
-      bootstrapTwitterX,
+      featherLinkedin,
+      featherGithub,
+      featherTwitter,
     }),
   ],
 })
