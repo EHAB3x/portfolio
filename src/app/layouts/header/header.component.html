@@ -1,1 +1,35 @@
-<p>header works!</p>
+<header class="header dark:bg-slate-800" #scrollHeader>
+  <nav class="container">
+    <a routerLink="/" class="nav__logo dark:text-white">Ihab</a>
+
+    <div
+      class="nav__menu dark:bg-slate-800"
+      [ngClass]="{'show-menu' : showMenu}"
+    >
+      <ul class="nav__list grid">
+        @for (item of navLinksArray; track item.id; let index = $index) {
+        <li class="nav__item">
+          <a
+            [href]="'#' + item.id"
+            class="nav__link dark:text-white dark:hover:text-slate-300"
+            (click)="setActiveLink(item.id)"
+            [ngClass]="{ 'active-link': activeLink === item.id }"
+          >
+            <ng-icon [name]="item.svg" class="nav__icon" />
+            {{ item.name }}
+          </a>
+        </li>
+        }
+      </ul>
+
+      <ng-icon
+        name="bootstrapX"
+        class="nav__close dark:text-white"
+        (click)="toggleMenu()"
+      ></ng-icon>
+    </div>
+    <div class="nav__toggle" (click)="toggleMenu()">
+      <ng-icon name="bootstrapGrid" class="dark:text-white"></ng-icon>
+    </div>
+  </nav>
+</header>

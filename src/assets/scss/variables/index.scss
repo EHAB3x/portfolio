@@ -1,2 +1,5 @@
-@use 'colors.scss';
-@use 'media.scss';
+@import './colors.scss';
+@import './media.scss';
+@import './fontSize.scss';
+@import './fontWeight.scss';
+@import './z-index.scss';
