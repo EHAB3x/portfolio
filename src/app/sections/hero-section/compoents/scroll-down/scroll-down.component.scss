@@ -1,0 +1,32 @@
+@import "global";
+.home__scroll {
+  display: flex;
+  justify-content: center;
+
+  .wheel {
+    animation: scroll 2s ease infinite;
+    -webkit-animation: scroll 2s ease infinite;
+  }
+
+  .home__scroll-name {
+    color: $title-color;
+    font-weight: $font-medium;
+    margin-right: 0.25rem;
+    margin-left: 2px;
+  }
+  .home__scroll-arrow {
+    font-size: 1.25rem;
+    color: $title-color;
+    display: flex;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(3.75rem);
+  }
+}

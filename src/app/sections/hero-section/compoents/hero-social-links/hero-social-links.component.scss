@@ -1,0 +1,14 @@
+@import "global";
+.home__social {
+  display: grid;
+  grid-template-columns: max-content;
+  row-gap: 1rem;
+  margin-left: 1.5rem;
+  .home__social-icon {
+    font-size: 1.25rem;
+    color: $title-color;
+    &:hover {
+      color: $title-color-dark;
+    }
+  }
+}

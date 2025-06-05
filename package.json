@@ -19,6 +19,7 @@
     "@angular/router": "^19.2.0",
     "@ng-icons/bootstrap-icons": "^31.4.0",
     "@ng-icons/core": "^31.4.0",
+    "@ng-icons/feather-icons": "^31.4.0",
     "@ng-icons/heroicons": "^31.4.0",
     "@tailwindcss/postcss": "^4.1.8",
     "postcss": "^8.5.4",

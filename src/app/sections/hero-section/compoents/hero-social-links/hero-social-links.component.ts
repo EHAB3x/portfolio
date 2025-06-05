@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ISocialLinks } from '../../core/interfaces/social-links';
+import { ISocialLinks } from '../../../../core/interfaces/social-links';
+import { socialLinks } from '../../../../core/constants/socialLinks';
 import { CommonModule } from '@angular/common';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
@@ -7,13 +8,12 @@ import {
   featherGithub,
   featherTwitter,
 } from '@ng-icons/feather-icons';
-import { socialLinks } from '../../core/constants/socialLinks';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-hero-social-links',
   imports: [CommonModule, NgIcon],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+  templateUrl: './hero-social-links.component.html',
+  styleUrl: './hero-social-links.component.scss',
   viewProviders: [
     provideIcons({
       featherLinkedin,
@@ -22,6 +22,6 @@ import { socialLinks } from '../../core/constants/socialLinks';
     }),
   ],
 })
-export class FooterComponent {
-  footerSocialLinks: ISocialLinks[] = socialLinks;
+export class HeroSocialLinksComponent {
+  socialLinksArr: ISocialLinks[] = socialLinks;
 }

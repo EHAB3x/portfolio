@@ -1,0 +1,11 @@
+<div class="home__social">
+  @for (item of socialLinksArr; track item.link) {
+  <a
+    [href]="item.link"
+    class="home__social-icon dark:text-white dark:hover:text-slate-300"
+    target="_blank"
+  >
+    <ng-icon [name]="item.svg"></ng-icon>
+  </a>
+  }
+</div>
