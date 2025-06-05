@@ -1,4 +1,3 @@
-import { navLinks } from './navLinks';
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -14,6 +13,7 @@ import {
   bootstrapMailbox,
 } from '@ng-icons/bootstrap-icons';
 import { INavLink } from '../../core/interfaces/nav-links';
+import { navLinks } from '../../core/constants/navLinks';
 
 @Component({
   selector: 'app-header',
