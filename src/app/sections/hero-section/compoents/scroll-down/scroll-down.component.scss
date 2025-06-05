@@ -1,0 +1,40 @@
+@import "global";
+.home__scroll {
+  margin-left: 9.25rem;
+
+  .wheel {
+    animation: scroll 2s ease infinite;
+    -webkit-animation: scroll 2s ease infinite;
+  }
+
+  .home__scroll-name {
+    color: $title-color;
+    font-weight: $font-medium;
+    margin-right: 0.25rem;
+    margin-left: 2px;
+  }
+  .home__scroll-arrow {
+    font-size: 1.25rem;
+    color: $title-color;
+  }
+  @media screen and (max-width: 992px) {
+    .home__scroll {
+      margin-left: 7.5rem;
+    }
+  }
+  @media screen and (max-width: $max_mobile) {
+    .home__scroll {
+      margin-left: 0;
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(3.75rem);
+  }
+}
