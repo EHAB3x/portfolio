@@ -1,19 +1,19 @@
 import { IAboutConstants } from "../interfaces/iabout-constants";
 
-export const experiences : IAboutConstants[] = [
+export const aboutConstants : IAboutConstants[] = [
   {
     name: 'Experience',
     desc: '1 Years Working',
-    svg: 'award',
+    svg: 'featherAward',
   },
   {
     name: 'Completed',
-    desc: '+12 Project',
-    svg: 'briefcase-alt',
+    desc: '+20 Project',
+    svg: 'featherBriefcase',
   },
   {
     name: 'Support',
     desc: 'Online 24/7',
-    svg: 'support',
+    svg: 'featherHeadphones',
   },
 ];
