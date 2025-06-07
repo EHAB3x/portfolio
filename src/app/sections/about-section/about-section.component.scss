@@ -1,0 +1,53 @@
+@import "global";
+.about {
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 4rem;
+
+    .about__img {
+      width: 350px;
+      border-radius: 1.5rem;
+      justify-self: center;
+    }
+
+    .about__data {
+      .about__description {
+        padding: 0 4rem 0 0;
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .about__container {
+      grid-template-columns: 1fr;
+      row-gap: 2.5rem;
+
+      .about__img {
+        width: 220px;
+      }
+
+      .about__data {
+        text-align: center;
+
+        .about__description {
+          padding: 0 5rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .about__container {
+      .about__data {
+        .about__description {
+          padding: 0;
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
