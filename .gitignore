@@ -43,3 +43,4 @@ Thumbs.db
 
 # Environment variables
 src/environments/environment.ts
+deploy-scripts/post-commit-deploy.ps1

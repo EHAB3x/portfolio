@@ -5,11 +5,9 @@
 
   .wheel {
     animation: scroll 2s ease infinite;
-    -webkit-animation: scroll 2s ease infinite;
   }
 
   .home__scroll-name {
-    color: $title-color;
     font-weight: $font-medium;
     margin-right: 0.25rem;
     margin-left: 2px;

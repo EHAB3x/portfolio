@@ -1,6 +1,9 @@
 @import "global";
 
 .qualification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .qualification__container {
     padding-left: 1rem;
     padding-right: 1rem;

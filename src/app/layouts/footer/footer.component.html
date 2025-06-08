@@ -1,19 +1,19 @@
-<footer class="dark:bg-slate-900">
+<footer class="dark:!bg-slate-900">
   <div class="footer__container container">
-    <h1 class="footer__title dark:text-white">Ihab</h1>
+    <h1 class="footer__title dark:!text-white">Ihab</h1>
 
     <ul class="footer__list">
       <li>
-        <a href="#about" class="footer__link dark:text-white">About</a>
+        <a href="#about" class="footer__link dark:!text-white">About</a>
       </li>
       <li>
-        <a href="#skills" class="footer__link dark:text-white">Skills</a>
+        <a href="#skills" class="footer__link dark:!text-white">Skills</a>
       </li>
       <li>
-        <a href="#services" class="footer__link dark:text-white">Services</a>
+        <a href="#services" class="footer__link dark:!text-white">Services</a>
       </li>
       <li>
-        <a href="#projects" class="footer__link dark:text-white">Projects</a>
+        <a href="#projects" class="footer__link dark:!text-white">Projects</a>
       </li>
     </ul>
 
@@ -21,7 +21,7 @@
       @for (item of footerSocialLinks; track item.link) {
       <a
         [href]="item.link"
-        class="footer__social-link dark:text-white dark:hover:text-slate-300"
+        class="footer__social-link dark:!text-white dark:hover:!text-slate-300"
         target="_blank"
       >
         <ng-icon [name]="item.svg"></ng-icon>
@@ -29,7 +29,7 @@
       }
     </div>
 
-    <span class="footer__copy dark:text-white"
+    <span class="footer__copy dark:!text-white"
       >&#169; ihab Mahmoud. All rights reserved</span
     >
   </div>

@@ -1,9 +1,9 @@
 <div class="about__info grid">
   @for (item of aboutConstantsArray; track item.svg) {
-  <div class="about__box dark:bg-slate-900">
-    <ng-icon [name]="item.svg" class="about__icon dark:text-white"></ng-icon>
-    <h3 class="about__title dark:text-white">{{ item.name }}</h3>
-    <span class="about__subtitle dark:text-slate-200">
+  <div class="about__box dark:!bg-slate-900">
+    <ng-icon [name]="item.svg" class="about__icon dark:!text-white"></ng-icon>
+    <h3 class="about__title dark:!text-white">{{ item.name }}</h3>
+    <span class="about__subtitle dark:!text-slate-200">
       {{ item.desc }}
     </span>
   </div>

@@ -4,6 +4,7 @@
   grid-template-columns: max-content;
   row-gap: 1rem;
   margin-left: 1.5rem;
+  transition: 0.3s linear;
   .home__social-icon {
     font-size: 1.25rem;
     color: $title-color;
