@@ -1,0 +1,44 @@
+<section class="qualification section">
+  <h2 class="section__title dark:text-white">Qualification</h2>
+  <span class="section__subtitle dark:text-slate-400">
+    My personal journey
+  </span>
+
+  <div class="qualification__container container">
+    <div class="qualification__tabs">
+      <div
+        class="qualification__button button__flex dark:text-slate-300 dark:hover:text-white"
+        [ngClass]="
+          activeTab === false ? 'qualification__active dark:text-white' : ' '
+        "
+        (click)="setActiveTab(false)"
+      >
+        <ng-icon name="heroAcademicCap" class="qualification__icon"></ng-icon>
+        Education
+      </div>
+
+      <div
+        class="qualification__button button__flex dark:text-slate-300 dark:hover:text-white"
+        [ngClass]="
+          activeTab === true ? 'qualification__active dark:text-white' : ''
+        "
+        (click)="setActiveTab(true)"
+      >
+        <ng-icon name="heroBriefcase" class="qualification__icon"></ng-icon>
+        Experience
+      </div>
+    </div>
+
+    <div class="qualification__sections">
+      @if(activeTab === false){
+      <app-qualification-data
+        [qualifications]="educations"
+      ></app-qualification-data>
+      }@else {
+      <app-qualification-data
+        [qualifications]="experiences"
+      ></app-qualification-data>
+      }
+    </div>
+  </div>
+</section>
