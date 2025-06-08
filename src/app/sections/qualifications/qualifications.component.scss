@@ -1,0 +1,45 @@
+@import "global";
+
+.qualification {
+  .qualification__container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    .qualification__tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      .qualification__button {
+        font-size: $h3-font-size;
+        font-weight: $font-medium;
+        color: $title-color;
+        margin: 0 1rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $title-color-dark;
+        }
+
+        &.qualification__active {
+          color: $title-color-dark;
+        }
+
+        .qualification__icon {
+          font-size: 1.8rem;
+          margin-right: 0.25rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .qualification__container {
+      .qualification__tabs {
+        .qualification__button {
+          margin: 0 0.75rem;
+        }
+      }
+    }
+  }
+}
