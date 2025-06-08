@@ -9,6 +9,7 @@
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
   font-weight: $font-medium;
+  transition: 0.3s linear;
 
   &:hover {
     background-color: $title-color-dark;

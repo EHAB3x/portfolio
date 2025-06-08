@@ -1,0 +1,11 @@
+<div
+  class="theme inline-flex items-center justify-center p-2 bg-slate-800 rounded-md shadow-lg hover:bg-slate-900"
+  (click)="changeTheme()"
+>
+  @if (currentTheme) {
+  <ng-icon name="faSolidSun"></ng-icon>
+  }@else {
+  <ng-icon name="faSolidMoon"></ng-icon>
+
+  }
+</div>
