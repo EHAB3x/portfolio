@@ -29,6 +29,7 @@ export class ProjectsFilterComponent implements OnInit {
     this.projectsService.getAllProjects().subscribe({
       next: (res) => {
         this.projects = res;
+        this.filteredProjects = this.projects;
       },
     });
   }
