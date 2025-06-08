@@ -36,23 +36,17 @@
   gap: 3rem;
   justify-content: center;
   @media screen and (max-width: 1190px) {
-    .work__container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   @media screen and (max-width: $max_mobile) {
-    .work__container {
-      grid-template-columns: max-content;
-    }
+    grid-template-columns: max-content;
   }
 
   @media screen and (max-width: 576px) {
-    .work__container {
-      grid-template-columns: 1fr;
-    }
+    grid-template-columns: 1fr;
   }
 }

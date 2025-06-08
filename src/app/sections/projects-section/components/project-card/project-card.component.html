@@ -1,0 +1,15 @@
+<div class="work__card dark:bg-slate-900">
+  <img [src]="item.img" [alt]="item.title" class="work__img" />
+
+  <h3 class="work__title dark:text-white">{{ item.title }}</h3>
+  <a
+    [href]="item.link"
+    class="work__button dark:text-slate-200"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Live Demo
+    <ng-icon name="bootstrapArrowRight" class="work__button-icon"></ng-icon>
+  </a
+  >
+</div>
