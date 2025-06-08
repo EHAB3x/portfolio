@@ -1,0 +1,65 @@
+@import "global";
+
+.contact {
+  .contact__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contact__form {
+      background-color: $container-color;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1.25rem;
+      border-radius: 1rem;
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .contact__form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+
+        .contact__form-control {
+          outline: 0;
+          background-color: $body-color;
+          padding: 0.75rem;
+          border-radius: 10px;
+          margin-top: 0.5rem;
+          resize: none;
+        }
+      }
+      .contact__form-button {
+        padding: 1rem;
+        width: 220px;
+        margin: 0 auto;
+      }
+    }
+  }
+  @media screen and (max-width: $max_tablet) {
+    .contact__content {
+      .contact__form {
+        width: 70%;
+      }
+    }
+  }
+  @media screen and (max-width: $max_mobile) {
+    .contact__content {
+      .contact__form {
+        width: 100%;
+      }
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .contact__content {
+      .contact__form {
+        .contact__form-button {
+          padding: 1rem;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
