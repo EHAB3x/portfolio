@@ -1,1 +1,61 @@
-<p>services-section works!</p>
+<section class="services section dark:bg-settle-800" id="services">
+  <h2 class="section__title dark:text-white">Services</h2>
+  <span class="section__subtitle dark:text-slate-400"> What i offer </span>
+
+  <div class="services__container container grid">
+    @for (item of services; track item.id) {
+    <div class="services__content dark:bg-slate-900" key="{service.order}">
+      <div>
+        <ng-icon
+          [name]="item.icon"
+          class="services__icon dark:text-white"
+        ></ng-icon>
+        <h3 class="services__title dark:text-white">{{ item.title }}</h3>
+      </div>
+
+      <span
+        class="services__button dark:text-slate-300"
+        (click)="setToggle(item.id)"
+      >
+        View More
+        <ng-icon
+          name="bootstrapArrowRight"
+          class="services__button-icon"
+        ></ng-icon>
+      </span>
+      <div
+        class="services__modal"
+        [ngClass]="toggle === item.id ? 'active-modal' : ''"
+      >
+        <div class="services__modal-content dark:bg-slate-900">
+          <ng-icon
+            name="bootstrapX"
+            class="services__modal-close dark:text-white"
+            (click)="setToggle(0)"
+          ></ng-icon>
+
+          <h3 class="services__modal-title dark:text-white">
+            {{ item.title }}
+          </h3>
+
+          <p class="services__modal-description dark:text-slate-300">
+            {{ item.description }}
+          </p>
+
+          <ul class="services__modal-services grid">
+            @for(feature of item.features; track feature){
+            <li class="services__modal-service dark:text-white">
+              <ng-icon
+                name="featherCheckCircle"
+                class="services__modal-icon dark:text-white"
+              ></ng-icon>
+              <p class="services__modal-info">{{ feature }}</p>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</section>

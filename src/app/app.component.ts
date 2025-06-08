@@ -4,6 +4,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { HeroSectionComponent } from './sections/hero-section/hero-section.component';
 import { AboutSectionComponent } from './sections/about-section/about-section.component';
 import { SkillsSectionComponent } from './sections/skills-section/skills-section.component';
+import { ServicesSectionComponent } from "./sections/services-section/services-section.component";
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,9 @@ import { SkillsSectionComponent } from './sections/skills-section/skills-section
     FooterComponent,
     HeroSectionComponent,
     AboutSectionComponent,
-    SkillsSectionComponent
-  ],
+    SkillsSectionComponent,
+    ServicesSectionComponent
+],
 })
 export class AppComponent {
   title = 'portfolio';
