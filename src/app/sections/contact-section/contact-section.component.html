@@ -15,9 +15,9 @@
           placeholder="Enter your name"
           required
         />
-        <div *ngIf="f.name.touched && f.name.invalid" class="text-red-500 text-xs mt-1">
-          <span *ngIf="f.name.errors?.['required']">Name is required.</span>
-          <span *ngIf="f.name.errors?.['maxLength']">Name is too long.</span>
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="text-red-500 text-xs mt-1">
+          <span *ngIf="f['name'].errors?.['required']">Name is required.</span>
+          <span *ngIf="f['name'].errors?.['maxLength']">Name is too long.</span>
         </div>
       </div>
 
@@ -32,9 +32,9 @@
           placeholder="Enter your email"
           required
         />
-        <div *ngIf="f.email.touched && f.email.invalid" class="text-red-500 text-xs mt-1">
-          <span *ngIf="f.email.errors?.['required']">Email is required.</span>
-          <span *ngIf="f.email.errors?.['email']">Invalid email address.</span>
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="text-red-500 text-xs mt-1">
+          <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+          <span *ngIf="f['email'].errors?.['email']">Invalid email address.</span>
         </div>
       </div>
 
@@ -49,9 +49,9 @@
           placeholder="Enter email subject"
           required
         />
-        <div *ngIf="f.subject.touched && f.subject.invalid" class="text-red-500 text-xs mt-1">
-          <span *ngIf="f.subject.errors?.['required']">Subject is required.</span>
-          <span *ngIf="f.subject.errors?.['maxLength']">Subject is too long.</span>
+        <div *ngIf="f['subject'].touched && f['subject'].invalid" class="text-red-500 text-xs mt-1">
+          <span *ngIf="f['subject'].errors?.['required']">Subject is required.</span>
+          <span *ngIf="f['subject'].errors?.['maxLength']">Subject is too long.</span>
         </div>
       </div>
 
@@ -66,16 +66,16 @@
           placeholder="Write What U Want."
           required
         ></textarea>
-        <div *ngIf="f.email_body.touched && f.email_body.invalid" class="text-red-500 text-xs mt-1">
-          <span *ngIf="f.email_body.errors?.['required']">Message is required.</span>
-          <span *ngIf="f.email_body.errors?.['maxLength']">Message is too long.</span>
+        <div *ngIf="f['email_body'].touched && f['email_body'].invalid" class="text-red-500 text-xs mt-1">
+          <span *ngIf="f['email_body'].errors?.['required']">Message is required.</span>
+          <span *ngIf="f['email_body'].errors?.['maxLength']">Message is too long.</span>
         </div>
       </div>
 
       <button type="submit" class="contact__form-button button cursor-pointer" [disabled]="isSubmitting">
         {{ isSubmitting ? 'Sending...' : 'Submit' }}
       </button>
-      <div *ngIf="submitSuccess" class="text-green-500 mt-2">Message sent successfully!</div>
+      <div *ngIf="submitSuccess" class="text-center !mt-2">Message sent successfully!</div>
       <div *ngIf="submitError" class="text-red-500 mt-2">{{ submitError }}</div>
     </form>
   </div>
