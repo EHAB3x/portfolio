@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, timeout, repeatWhen, delay } from 'rxjs';
 import { IProjects } from '../interfaces/iprojects';
 import { environment } from '../../../environments/environment';
 
@@ -15,11 +15,13 @@ export class ProjectsServiceService {
   }
 
   getAllCategories(): Observable<IProjects['category'][]> {
-  return this.getAllProjects().pipe(
-    map(res => {
-      const cats = res.map(project => project.category);
-      return ['all', ...cats];
-    })
-  );
-}
+    return this.getAllProjects().pipe(
+      map((res) => {
+        const cats = res.map((project) => project.category);
+        return ['all', ...cats];
+      }),
+      timeout(5000),
+      repeatWhen((errors) => errors.pipe(delay(2000)))
+    );
+  }
 }
