@@ -3,19 +3,19 @@
   <div class="qualification__data">
     <div *ngIf="$index % 2 !== 0"></div>
     <div [ngClass]="$index % 2 !== 0 ? 'qualification__right' : ''">
-      <h3 class="qualification__title dark:text-white">{{ item.title }}</h3>
-      <span class="qualification__subtitle dark:text-slate-200"
+      <h3 class="qualification__title dark:!text-white">{{ item.title }}</h3>
+      <span class="qualification__subtitle dark:!text-slate-200"
         >{{ item.country }} - {{ item.place }}</span
       >
-      <div class="qualification__calender dark:text-white">
+      <div class="qualification__calender dark:!text-white">
         <ng-icon name="featherCalendar"></ng-icon>
         {{ item.date }}
       </div>
     </div>
 
     <div>
-      <span class="qualification__rounder dark:bg-[#fff]"></span>
-      <span class="qualification__line dark:bg-[#fff]"></span>
+      <span class="qualification__rounder dark:!bg-[#fff]"></span>
+      <span class="qualification__line dark:!bg-[#fff]"></span>
     </div>
   </div>
   }
