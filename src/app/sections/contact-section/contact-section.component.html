@@ -1,16 +1,16 @@
 <div class="contact section" id="contact">
-  <h2 class="section__title dark:text-white">Get in touch</h2>
-  <span class="section__subtitle dark:text-slate-400"> Contact me </span>
+  <h2 class="section__title dark:!text-white">Get in touch</h2>
+  <span class="section__subtitle dark:!text-slate-400"> Contact me </span>
 
   <div class="contact__content">
-    <form [formGroup]="contactForm" class="contact__form dark:bg-slate-900" (submit)="sendEmail($event)">
+    <form [formGroup]="contactForm" class="contact__form dark:!bg-slate-900" (submit)="sendEmail($event)">
       <div class="contact__form-group">
-        <label for="name" class="dark:text-white">Name</label>
+        <label for="name" class="dark:!text-white">Name</label>
         <input
           type="text"
           name="name"
           formControlName="name"
-          class="contact__form-control dark:bg-slate-800 dark:placeholder:text-slate-400 dark:text-white"
+          class="contact__form-control dark:!bg-slate-800 dark:placeholder:!text-slate-400 dark:!text-white"
           id="name"
           placeholder="Enter your name"
           required
@@ -22,12 +22,12 @@
       </div>
 
       <div class="contact__form-group">
-        <label for="email" class="dark:text-white">Email address</label>
+        <label for="email" class="dark:!text-white">Email address</label>
         <input
           type="email"
           name="email"
           formControlName="email"
-          class="contact__form-control dark:bg-slate-800 dark:placeholder:text-slate-400 dark:text-white"
+          class="contact__form-control dark:!bg-slate-800 dark:placeholder:!text-slate-400 dark:!text-white"
           id="email"
           placeholder="Enter your email"
           required
@@ -39,12 +39,12 @@
       </div>
 
       <div class="contact__form-group">
-        <label for="subject" class="dark:text-white">Subject</label>
+        <label for="subject" class="dark:!text-white">Subject</label>
         <input
           type="text"
           name="subject"
           formControlName="subject"
-          class="contact__form-control dark:bg-slate-800 dark:placeholder:text-slate-400 dark:text-white"
+          class="contact__form-control dark:!bg-slate-800 dark:placeholder:!text-slate-400 dark:!text-white"
           id="subject"
           placeholder="Enter email subject"
           required
@@ -56,11 +56,11 @@
       </div>
 
       <div class="contact__form-group">
-        <label for="email_body" class="dark:text-white">Message</label>
+        <label for="email_body" class="dark:!text-white">Message</label>
         <textarea
           name="email_body"
           formControlName="email_body"
-          class="contact__form-control dark:bg-slate-800 dark:placeholder:text-slate-400 dark:text-white"
+          class="contact__form-control dark:!bg-slate-800 dark:placeholder:!text-slate-400 dark:!text-white"
           id="email_body"
           rows="5"
           placeholder="Write What U Want."
