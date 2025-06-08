@@ -1,0 +1,82 @@
+<div class="contact section" id="contact">
+  <h2 class="section__title dark:text-white">Get in touch</h2>
+  <span class="section__subtitle dark:text-slate-400"> Contact me </span>
+
+  <div class="contact__content">
+    <form [formGroup]="contactForm" class="contact__form dark:bg-slate-900" (submit)="sendEmail($event)">
+      <div class="contact__form-group">
+        <label for="name" class="dark:text-white">Name</label>
+        <input
+          type="text"
+          name="name"
+          formControlName="name"
+          class="contact__form-control dark:bg-slate-800 dark:placeholder:text-slate-400 dark:text-white"
+          id="name"
+          placeholder="Enter your name"
+          required
+        />
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="text-red-500 text-xs mt-1">
+          <span *ngIf="f['name'].errors?.['required']">Name is required.</span>
+          <span *ngIf="f['name'].errors?.['maxLength']">Name is too long.</span>
+        </div>
+      </div>
+
+      <div class="contact__form-group">
+        <label for="email" class="dark:text-white">Email address</label>
+        <input
+          type="email"
+          name="email"
+          formControlName="email"
+          class="contact__form-control dark:bg-slate-800 dark:placeholder:text-slate-400 dark:text-white"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="text-red-500 text-xs mt-1">
+          <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+          <span *ngIf="f['email'].errors?.['email']">Invalid email address.</span>
+        </div>
+      </div>
+
+      <div class="contact__form-group">
+        <label for="subject" class="dark:text-white">Subject</label>
+        <input
+          type="text"
+          name="subject"
+          formControlName="subject"
+          class="contact__form-control dark:bg-slate-800 dark:placeholder:text-slate-400 dark:text-white"
+          id="subject"
+          placeholder="Enter email subject"
+          required
+        />
+        <div *ngIf="f['subject'].touched && f['subject'].invalid" class="text-red-500 text-xs mt-1">
+          <span *ngIf="f['subject'].errors?.['required']">Subject is required.</span>
+          <span *ngIf="f['subject'].errors?.['maxLength']">Subject is too long.</span>
+        </div>
+      </div>
+
+      <div class="contact__form-group">
+        <label for="email_body" class="dark:text-white">Message</label>
+        <textarea
+          name="email_body"
+          formControlName="email_body"
+          class="contact__form-control dark:bg-slate-800 dark:placeholder:text-slate-400 dark:text-white"
+          id="email_body"
+          rows="5"
+          placeholder="Write What U Want."
+          required
+        ></textarea>
+        <div *ngIf="f['email_body'].touched && f['email_body'].invalid" class="text-red-500 text-xs mt-1">
+          <span *ngIf="f['email_body'].errors?.['required']">Message is required.</span>
+          <span *ngIf="f['email_body'].errors?.['maxLength']">Message is too long.</span>
+        </div>
+      </div>
+
+      <button type="submit" class="contact__form-button button cursor-pointer" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Sending...' : 'Submit' }}
+      </button>
+      <div *ngIf="submitSuccess" class="text-center !mt-2">Message sent successfully!</div>
+      <div *ngIf="submitError" class="text-red-500 mt-2">{{ submitError }}</div>
+    </form>
+  </div>
+</div>
