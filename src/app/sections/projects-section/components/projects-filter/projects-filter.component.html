@@ -7,9 +7,13 @@
     "
     (click)="setCategory(item); setActiveTab($index)"
   >
-    {{item}}
+    {{ item }}
   </span>
   }
 </div>
 
-
+<div class="work__container container grid">
+  @for (item of filteredProjects; track $index) {
+    <app-project-card [item]="item"></app-project-card>
+  }
+</div>
