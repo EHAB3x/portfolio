@@ -1,0 +1,58 @@
+@import "global";
+
+.work__filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+  margin-bottom: 2rem;
+
+  .work__item {
+    cursor: pointer;
+    color: $title-color;
+    padding: 0.25rem 0.75rem;
+    font-weight: $font-medium;
+    border-radius: 0.5rem;
+    text-transform: capitalize;
+    transition: 0.3s linear;
+
+    &:hover,
+    &.active-work {
+      background-color: $title-color;
+      color: $container-color;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    column-gap: 0.25rem;
+    .work__item {
+      font-size: $small-font-size;
+    }
+  }
+}
+
+.work__container {
+  grid-template-columns: repeat(2, max-content);
+  gap: 3rem;
+  justify-content: center;
+  @media screen and (max-width: 1190px) {
+    .work__container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media screen and (max-width: $max_mobile) {
+    .work__container {
+      grid-template-columns: max-content;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .work__container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
