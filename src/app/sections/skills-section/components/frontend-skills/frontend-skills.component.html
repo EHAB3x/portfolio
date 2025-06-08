@@ -1,0 +1,20 @@
+<div class="skills__content dark:bg-slate-900">
+  <h3 class="skills__title dark:text-white">Frontend Developer</h3>
+
+  <div class="skills__box">
+    <div class="skills__group">
+      @for (item of skills; track item.id) {
+      <div class="skills__data" key="{skill.order}">
+        <ng-icon name="heroCheckBadge" class="dark:!text-white"></ng-icon>
+
+        <div>
+          <h3 class="skills__name dark:text-white">{{ item.name }}</h3>
+          <span class="skills__level dark:text-slate-300">{{
+            item.level
+          }}</span>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
