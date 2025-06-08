@@ -7,6 +7,7 @@ import { SkillsSectionComponent } from './sections/skills-section/skills-section
 import { ServicesSectionComponent } from "./sections/services-section/services-section.component";
 import { QualificationsComponent } from "./sections/qualifications/qualifications.component";
 import { ProjectsSectionComponent } from "./sections/projects-section/projects-section.component";
+import { ContactSectionComponent } from "./sections/contact-section/contact-section.component";
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { ProjectsSectionComponent } from "./sections/projects-section/projects-s
     SkillsSectionComponent,
     ServicesSectionComponent,
     QualificationsComponent,
-    ProjectsSectionComponent
+    ProjectsSectionComponent,
+    ContactSectionComponent
 ],
 })
 export class AppComponent {
