@@ -8,6 +8,7 @@ import { ServicesSectionComponent } from "./sections/services-section/services-s
 import { QualificationsComponent } from "./sections/qualifications/qualifications.component";
 import { ProjectsSectionComponent } from "./sections/projects-section/projects-section.component";
 import { ContactSectionComponent } from "./sections/contact-section/contact-section.component";
+import { ThemeToggleComponent } from "./shared/theme-toggle/theme-toggle.component";
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { ContactSectionComponent } from "./sections/contact-section/contact-sect
     ServicesSectionComponent,
     QualificationsComponent,
     ProjectsSectionComponent,
-    ContactSectionComponent
+    ContactSectionComponent,
+    ThemeToggleComponent
 ],
 })
 export class AppComponent {

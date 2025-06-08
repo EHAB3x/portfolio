@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { bootstrapArrowRight, bootstrapX } from '@ng-icons/bootstrap-icons';
 import { featherCheckCircle } from '@ng-icons/feather-icons';
+import { faBrandReact, faBrandAngular } from '@ng-icons/font-awesome/brands';
+import { faSolidBrush, faSolidDesktop } from '@ng-icons/font-awesome/solid';
 
 @Component({
   selector: 'app-services-section',
@@ -16,6 +18,10 @@ import { featherCheckCircle } from '@ng-icons/feather-icons';
       bootstrapArrowRight,
       bootstrapX,
       featherCheckCircle,
+      faBrandReact,
+      faBrandAngular,
+      faSolidBrush,
+      faSolidDesktop,
     }),
   ],
 })

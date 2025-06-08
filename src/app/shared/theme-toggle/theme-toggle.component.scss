@@ -1,0 +1,21 @@
+@import "global";
+.theme {
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  color: $body-color;
+  cursor: pointer;
+  transition: 0.3s linear;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+}
+
+@media screen and (max-width: 768px) {
+  .theme {
+    top: 15px;
+    right: 20px;
+    transform: translateY(0);
+  }
+}

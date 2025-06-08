@@ -4,8 +4,6 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 2rem 4rem;
   border-radius: 1.25rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
   .skills__title {
     font-size: $normal-font-size;
     font-weight: $font-medium;
@@ -20,14 +18,13 @@
     .skills__group {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      row-gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
 
       .skills__data {
         display: flex;
         column-gap: 0.5rem;
         align-items: center;
-        margin-left: 35%;
 
         .skills__name {
           font-size: $normal-font-size;
@@ -56,12 +53,7 @@
   @media screen and (max-width: 576px) {
     .skills__box {
       .skills__group {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        column-gap: 1.5rem;
-
-        .skills__data {
-          margin-left: 0%;
-        }
+        grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
       }
     }
   }
