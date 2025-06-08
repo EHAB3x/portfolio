@@ -44,35 +44,31 @@
   }
 
   @media screen and (max-width: $max_mobile) {
-    .skills__content {
-      .skills__box {
-        .skills__group {
-          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        }
+    padding: 1rem;
+    margin: 0;
+    .skills__box {
+      .skills__group {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       }
     }
   }
 
   @media screen and (max-width: 576px) {
-    .skills__content {
-      .skills__box {
-        .skills__group {
-          grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-          column-gap: 1.5rem;
+    .skills__box {
+      .skills__group {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        column-gap: 1.5rem;
 
-          .skills__data {
-            margin-left: 20%;
-          }
+        .skills__data {
+          margin-left: 0%;
         }
       }
     }
   }
   @media screen and (max-width: 350px) {
-    .skills__content {
-      .skills__box {
-        .skills__group {
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        }
+    .skills__box {
+      .skills__group {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       }
     }
   }
