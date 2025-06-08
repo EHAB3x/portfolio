@@ -2,12 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
   Observable,
-  catchError,
   delay,
-  of,
   retryWhen,
-  take,
-  throwError,
   timeout,
 } from 'rxjs';
 import { ISkills } from '../interfaces/iskills';

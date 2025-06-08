@@ -1,0 +1,19 @@
+<div class="work__filters">
+  @for (item of categories; track item) {
+  <span
+    class="work__item dark:text-white dark:hover:bg-white dark:hover:!text-[#000] capitalize"
+    [ngClass]="
+      activeTab === $index ? 'active-work dark:bg-white dark:!text-[#000]' : ''
+    "
+    (click)="setCategory(item); setActiveTab($index)"
+  >
+    {{ item }}
+  </span>
+  }
+</div>
+
+<div class="work__container container grid">
+  @for (item of filteredProjects; track $index) {
+    <app-project-card [item]="item"></app-project-card>
+  }
+</div>
