@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay, Observable, repeatWhen, timeout } from 'rxjs';
+import { delay, Observable, timeout, retryWhen } from 'rxjs';
 import { IServices } from '../interfaces/iservices';
 import { environment } from '../../../environments/environment';
 
@@ -15,7 +15,7 @@ export class ServicesApiService {
       .get<IServices[]>(`${environment.baseUrl}/services`)
       .pipe(
         timeout(5000),
-        repeatWhen((errors) => errors.pipe(delay(2000)))
+        retryWhen((errors) => errors.pipe(delay(2000)))
       );
   }
 }
