@@ -21,6 +21,7 @@ export class ProjectsServiceService {
         cats = res.map((project) => project.category);
       },
     });
+    cats.unshift('all');
     return cats;
   }
 }
