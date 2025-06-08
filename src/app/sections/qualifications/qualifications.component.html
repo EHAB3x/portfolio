@@ -28,5 +28,17 @@
         Experience
       </div>
     </div>
+
+    <div class="qualification__sections">
+      @if(activeTab === false){
+      <app-qualification-data
+        [qualifications]="educations"
+      ></app-qualification-data>
+      }@else {
+      <app-qualification-data
+        [qualifications]="experiences"
+      ></app-qualification-data>
+      }
+    </div>
   </div>
 </section>
