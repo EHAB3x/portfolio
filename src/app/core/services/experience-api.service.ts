@@ -10,7 +10,7 @@ import { environment } from '../../../environments/environment';
 export class ExperienceApiService {
   constructor(private httpClient: HttpClient) {}
 
-  getAllEducations(): Observable<IQualifications[]> {
+  getAllExperiences(): Observable<IQualifications[]> {
     return this.httpClient
       .get<IQualifications[]>(`${environment.baseUrl}/experience`)
       .pipe(
