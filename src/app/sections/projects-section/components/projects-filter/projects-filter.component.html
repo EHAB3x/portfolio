@@ -12,7 +12,7 @@
   }
 </div>
 
-<div class="work__container container grid">
+<div class="work__container grid">
   @for (item of filteredProjects; track $index) {
     <app-project-card [item]="item"></app-project-card>
   }
