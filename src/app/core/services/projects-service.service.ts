@@ -22,7 +22,8 @@ export class ProjectsServiceService {
   getAllCategories(): Observable<IProjects['category'][]> {
     return this.getAllProjects().pipe(
       map((res) => {
-        const cats = res.map((project) => project.category);
+        let cats = res.map((project) => project.category);
+        cats = [...new Set(cats)];
         return ['all', ...cats];
       })
     );
