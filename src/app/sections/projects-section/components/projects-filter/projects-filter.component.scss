@@ -17,6 +17,7 @@
     border-radius: 0.5rem;
     text-transform: capitalize;
     transition: 0.3s linear;
+    text-wrap: nowrap;
 
     &:hover,
     &.active-work {
