@@ -20,6 +20,7 @@
         color: $title-color;
         margin: 0 1rem;
         cursor: pointer;
+        opacity: 0.2;
 
         &:hover {
           color: $title-color-dark;
@@ -27,6 +28,7 @@
 
         &.qualification__active {
           color: $title-color-dark;
+          opacity: 1;
         }
 
         .qualification__icon {
