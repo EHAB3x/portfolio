@@ -14,8 +14,9 @@
 
 @media screen and (max-width: 768px) {
   .theme {
-    top: 15px;
-    right: 20px;
+    top: unset;
+    bottom: 70px;
+    right: 10px;
     transform: translateY(0);
   }
 }
