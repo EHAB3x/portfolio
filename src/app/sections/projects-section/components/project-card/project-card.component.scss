@@ -51,3 +51,24 @@
     justify-content: center;
   }
 }
+@import "global";
+
+.work__card {
+  animation: section-enter 0.55s ease both;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-0.35rem);
+    box-shadow: 0 0.75rem 1.5rem rgba(15, 23, 42, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work__card {
+    transition: none;
+  }
+
+  .work__card:hover {
+    transform: none;
+  }
+}

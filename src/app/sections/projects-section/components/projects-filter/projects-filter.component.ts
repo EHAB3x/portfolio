@@ -3,10 +3,11 @@ import { ProjectsServiceService } from '../../../../core/services/projects-servi
 import { CommonModule } from '@angular/common';
 import { IProjects } from '../../../../core/interfaces/iprojects';
 import { ProjectCardComponent } from '../project-card/project-card.component';
+import { LoaderComponent } from '../../../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-projects-filter',
-  imports: [CommonModule, ProjectCardComponent],
+  imports: [CommonModule, ProjectCardComponent, LoaderComponent],
   templateUrl: './projects-filter.component.html',
   styleUrl: './projects-filter.component.scss',
 })
@@ -16,6 +17,9 @@ export class ProjectsFilterComponent implements OnInit {
   categories!: IProjects['category'][];
   category: string = 'all';
   activeTab: number = 0;
+  categoriesLoading = true;
+  projectsLoading = true;
+  errorMessage = '';
 
   constructor(private projectsService: ProjectsServiceService) {}
 
@@ -23,6 +27,11 @@ export class ProjectsFilterComponent implements OnInit {
     this.projectsService.getAllCategories().subscribe({
       next: (res) => {
         this.categories = res;
+        this.categoriesLoading = false;
+      },
+      error: () => {
+        this.categoriesLoading = false;
+        this.errorMessage = 'Projects are unavailable right now. Please try again later.';
       },
     });
 
@@ -30,6 +39,11 @@ export class ProjectsFilterComponent implements OnInit {
       next: (res) => {
         this.projects = res;
         this.filteredProjects = this.projects;
+        this.projectsLoading = false;
+      },
+      error: () => {
+        this.projectsLoading = false;
+        this.errorMessage = 'Projects are unavailable right now. Please try again later.';
       },
     });
   }
@@ -50,5 +64,9 @@ export class ProjectsFilterComponent implements OnInit {
         (project) => project.category === category
       );
     }
+  }
+
+  get loading(): boolean {
+    return this.categoriesLoading || this.projectsLoading;
   }
 }
