@@ -23,6 +23,10 @@ body {
   color: $text-color;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 /* Global Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 8px;

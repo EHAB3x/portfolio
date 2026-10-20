@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { IServices } from '../../core/interfaces/iservices';
 import { ServicesApiService } from '../../core/services/services-api.service';
 import { CommonModule } from '@angular/common';
@@ -26,14 +33,18 @@ import { LoaderComponent } from '../../shared/loader/loader.component';
     }),
   ],
 })
-export class ServicesSectionComponent implements OnInit {
+export class ServicesSectionComponent implements OnInit, OnDestroy {
   toggle: number = 0;
   activeService: IServices = {} as IServices;
   services!: IServices[];
   loading = true;
   errorMessage = '';
 
-  constructor(private serviceApi: ServicesApiService) {}
+  constructor(
+    private serviceApi: ServicesApiService,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
   ngOnInit(): void {
     this.serviceApi.getAllServices().subscribe({
@@ -49,11 +60,32 @@ export class ServicesSectionComponent implements OnInit {
     });
   }
 
-  setToggle(index: number) {
+  setToggle(index: number): void {
     this.toggle = index;
-    if (this.toggle !== -1) {
-      this.activeService = this.services.filter((ser) => ser.id === index)[0];
-      console.log(this.toggle);
+    if (index === -1) {
+      this.unlockPageScroll();
+      return;
     }
+
+    const service = this.services?.find((item) => item.id === index);
+    if (!service) {
+      this.unlockPageScroll();
+      return;
+    }
+
+    this.activeService = service;
+    this.lockPageScroll();
+  }
+
+  ngOnDestroy(): void {
+    this.unlockPageScroll();
+  }
+
+  private lockPageScroll(): void {
+    this.renderer.addClass(this.document.body, 'modal-open');
+  }
+
+  private unlockPageScroll(): void {
+    this.renderer.removeClass(this.document.body, 'modal-open');
   }
 }
