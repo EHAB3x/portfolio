@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, timeout, delay, retryWhen } from 'rxjs';
+import { map, Observable, retry, timeout } from 'rxjs';
 import { IProjects } from '../interfaces/iprojects';
 import { environment } from '../../../environments/environment';
 
@@ -15,7 +15,7 @@ export class ProjectsServiceService {
       .get<IProjects[]>(`${environment.baseUrl}/projects`)
       .pipe(
         timeout(5000),
-        retryWhen((errors) => errors.pipe(delay(2000)))
+        retry({ count: 2, delay: 1000 })
       );
   }
 

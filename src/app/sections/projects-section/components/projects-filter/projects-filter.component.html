@@ -1,3 +1,10 @@
+@if (loading) {
+<app-loader label="Loading projects"></app-loader>
+} @else if (errorMessage) {
+<p class="data-state data-state--error" role="alert">{{ errorMessage }}</p>
+} @else if (!filteredProjects.length) {
+<p class="data-state">No projects available yet.</p>
+} @else {
 <div class="work__filters">
   @for (item of categories; track item) {
   <span
@@ -19,3 +26,4 @@
   <app-project-card [item]="item"></app-project-card>
   }
 </div>
+}

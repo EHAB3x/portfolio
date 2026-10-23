@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, timeout, delay, retryWhen } from 'rxjs';
+import { Observable, retry, timeout } from 'rxjs';
 import { IQualifications } from '../interfaces/iqualifications';
 import { environment } from '../../../environments/environment';
 
@@ -15,7 +15,7 @@ export class ExperienceApiService {
       .get<IQualifications[]>(`${environment.baseUrl}/experience`)
       .pipe(
         timeout(5000),
-        retryWhen((errors) => errors.pipe(delay(2000)))
+        retry({ count: 2, delay: 1000 })
       );
   }
 }

@@ -4,6 +4,11 @@
     My personal journey
   </span>
 
+  @if (loading) {
+  <app-loader label="Loading qualifications"></app-loader>
+  } @else if (errorMessage) {
+  <p class="data-state data-state--error" role="alert">{{ errorMessage }}</p>
+  } @else {
   <div class="qualification__container">
     <div class="qualification__tabs">
       <div
@@ -41,4 +46,5 @@
       }
     </div>
   </div>
+  }
 </section>
