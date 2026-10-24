@@ -316,11 +316,11 @@
 
     background: linear-gradient(
       120deg,
-      #6366f1,
-      #7c3aed
+      var(--color-6366f1),
+      var(--color-7c3aed)
     );
 
-    color: #ffffff;
+    color: var(--color-ffffff);
     font-weight: 700;
     text-decoration: none;
 
@@ -349,7 +349,7 @@
     .button__icon { 
       display: block;
       flex-shrink: 0;
-      color: #ffffff;
+      color: var(--color-ffffff);
 
       transition: transform 0.25s ease;
     }
@@ -395,11 +395,11 @@
   .about__download {
     background: linear-gradient(
       120deg,
-      #6366f1,
-      #7c3aed
+      var(--color-6366f1),
+      var(--color-7c3aed)
     );
 
-    color: #ffffff;
+    color: var(--color-ffffff);
   }
 }
 
