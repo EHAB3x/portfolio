@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+import * as AOS from 'aos';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HeroSectionComponent } from './sections/hero-section/hero-section.component';
@@ -28,10 +29,19 @@ import { AnalyticsService } from './core/services/analytics.service';
     ThemeToggleComponent
 ],
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'portfolio';
 
   constructor(private readonly analyticsService: AnalyticsService) {}
+
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 80,
+    });
+  }
 
   onDocumentClick(event: MouseEvent): void {
     const target = event.target;
