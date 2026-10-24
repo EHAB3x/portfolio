@@ -1,0 +1,11 @@
+.app-shell {
+  min-height: 100vh;
+  background: var(--app-bg);
+  color: var(--app-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-main {
+  padding-top: 4.5rem;
+}
+

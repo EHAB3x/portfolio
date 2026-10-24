@@ -1,8 +1,8 @@
-<div (click)="onDocumentClick($event)">
+<div class="app-shell" (click)="onDocumentClick($event)">
   <app-theme-toggle></app-theme-toggle>
   <app-header></app-header>
-  <div class="dark:bg-slate-800">
-    <div class="container mx-auto">
+  <main class="app-main">
+    <div>
       <app-hero-section></app-hero-section>
       <app-about-section></app-about-section>
       <app-skills-section></app-skills-section>
@@ -11,6 +11,6 @@
       <app-projects-section></app-projects-section>
     </div>
     <app-contact-section></app-contact-section>
-    <app-footer></app-footer>
-  </div>
+  </main>
+  <app-footer></app-footer>
 </div>
