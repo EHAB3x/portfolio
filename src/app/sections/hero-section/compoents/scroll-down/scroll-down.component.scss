@@ -1,7 +1,17 @@
 @import "global";
+
 .home__scroll {
   display: flex;
   justify-content: center;
+
+  .home__scroll-button {
+    color: var(--scroll-text);
+    text-decoration: none;
+  }
+
+  svg {
+    stroke: var(--scroll-stroke);
+  }
 
   .wheel {
     animation: scroll 2s ease infinite;
@@ -11,10 +21,12 @@
     font-weight: $font-medium;
     margin-right: 0.25rem;
     margin-left: 2px;
+    color: var(--scroll-text);
   }
+
   .home__scroll-arrow {
     font-size: 1.25rem;
-    color: $title-color;
+    color: var(--scroll-text);
     display: flex;
   }
 }
@@ -28,3 +40,4 @@
     transform: translateY(3.75rem);
   }
 }
+
