@@ -1,6 +1,6 @@
-<section class="services dark:!bg-settle-800" id="services">
-  <h2 class="section__title dark:!text-white">Services</h2>
-  <span class="section__subtitle dark:!text-slate-400"> What i offer </span>
+<section class="services container" id="services">
+  <h2 class="section__title">Services</h2>
+  <span class="section__subtitle">What I offer</span>
 
   @if (loading) {
     <app-loader label="Loading services"></app-loader>
@@ -11,56 +11,55 @@
   } @else {
     <div class="services__container grid">
       @for (item of services; track item.id) {
-        <div class="services__content dark:!bg-slate-900">
+        <div class="services__content">
           <div>
-            <ng-icon
-              [name]="item.icon"
-              class="services__icon dark:!text-white"
-            ></ng-icon>
-            <h3 class="services__title dark:!text-white">{{ item.title }}</h3>
+            <ng-icon [name]="item.icon" class="services__icon" aria-hidden="true"></ng-icon>
+            <h3 class="services__title">{{ item.title }}</h3>
           </div>
 
-          <span
-            class="services__button dark:!text-slate-300"
+          <button
+            type="button"
+            class="services__button"
             (click)="setToggle(item.id)"
+            [attr.aria-haspopup]="'dialog'"
           >
             View More
-            <ng-icon
-              name="bootstrapArrowRight"
-              class="services__button-icon"
-            ></ng-icon>
-          </span>
+            <ng-icon name="bootstrapArrowRight" class="services__button-icon" aria-hidden="true"></ng-icon>
+          </button>
         </div>
       }
     </div>
+
     <div
       class="services__modal"
-      [ngClass]="
-        toggle === activeService.id && toggle !== 0 ? 'active-modal' : ''
-      "
+      [class.active-modal]="toggle !== 0 && toggle === activeService.id"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-labelledby]="'service-modal-title'"
+      (click)="setToggle(-1)"
     >
-      <div class="services__modal-content dark:!bg-slate-900">
-        <ng-icon
-          name="bootstrapX"
-          class="services__modal-close dark:!text-white"
+      <div class="services__modal-content" (click)="$event.stopPropagation()">
+        <button
+          type="button"
+          class="services__modal-close"
           (click)="setToggle(-1)"
-        ></ng-icon>
+          aria-label="Close service details"
+        >
+          <ng-icon name="bootstrapX" aria-hidden="true"></ng-icon>
+        </button>
 
-        <h3 class="services__modal-title dark:!text-white">
+        <h3 id="service-modal-title" class="services__modal-title">
           {{ activeService.title }}
         </h3>
 
-        <p class="services__modal-description dark:!text-slate-300">
+        <p class="services__modal-description">
           {{ activeService.description }}
         </p>
 
         <ul class="services__modal-services grid">
-          @for (feature of activeService.features; track feature) {
-            <li class="services__modal-service dark:!text-white">
-              <ng-icon
-                name="featherCheckCircle"
-                class="services__modal-icon dark:!text-white"
-              ></ng-icon>
+          @for (feature of activeService.features || []; track feature) {
+            <li class="services__modal-service">
+              <ng-icon name="featherCheckCircle" class="services__modal-icon" aria-hidden="true"></ng-icon>
               <p class="services__modal-info">{{ feature }}</p>
             </li>
           }

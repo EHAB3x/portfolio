@@ -1,7 +1,8 @@
 @import "global";
+
 .services {
   .services__container {
-    grid-template-columns: repeat(3, 270px);
+    grid-template-columns: repeat(3, minmax(0, 270px));
     justify-content: center;
     gap: 1.8rem;
 
@@ -9,23 +10,25 @@
       animation: section-enter 0.55s ease both;
       transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+      position: relative;
+      border: 1px solid var(--services-border);
+      background: var(--services-surface);
+      padding: 6rem 0 2rem 2.5rem;
+      border-radius: 1rem;
+      color: var(--services-text);
 
       &:hover {
         transform: translateY(-0.35rem);
-        box-shadow: 0 0.75rem 1.5rem rgba(15, 23, 42, 0.12);
+        box-shadow: 0 0.75rem 1.5rem var(--services-shadow-hover);
+        border-color: var(--services-accent-border);
       }
-
-      position: relative;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      background-color: $container-color;
-      padding: 6rem 0 2rem 2.5rem;
-      border-radius: 1rem;
 
       .services__icon {
         display: block;
         font-size: 2rem;
-        color: $title-color;
+        color: var(--services-accent);
         margin-bottom: 1rem;
       }
 
@@ -33,18 +36,23 @@
         font-size: $h3-font-size;
         margin-bottom: 1rem;
         font-weight: $font-medium;
+        color: var(--services-text);
       }
 
       .services__button {
-        color: $title-color;
+        color: var(--services-accent);
+        font: inherit;
         font-size: $small-font-size;
+        background: transparent;
+        border: 0;
+        padding: 0;
         display: inline-flex;
         align-items: center;
         column-gap: 0.25rem;
         cursor: pointer;
 
         &:hover .services__button-icon {
-          transform: translateX(00.25rem);
+          transform: translateX(0.25rem);
         }
 
         .services__button-icon {
@@ -54,13 +62,14 @@
       }
     }
   }
+
   .services__modal {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--services-overlay);
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -76,32 +85,32 @@
       visibility: visible;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .services__content {
-        transition: none;
-      }
-
-      .services__content:hover {
-        transform: none;
-      }
-    }
-
     .services__modal-content {
       width: 500px;
       position: relative;
-      background-color: $container-color;
+      background: var(--services-surface);
+      color: var(--services-text);
       padding: 4.5rem 2.5rem 2.5rem;
       border-radius: 1.5rem;
       max-height: 90vh;
       overflow-y: auto;
+      border: 1px solid var(--services-border);
 
       .services__modal-close {
         position: absolute;
         top: 1.5rem;
         right: 1.5rem;
         font-size: 1.5rem;
-        color: $title-color;
+        color: var(--services-muted);
         cursor: pointer;
+        background: transparent;
+        border: 0;
+        padding: 0;
+
+        &:focus-visible {
+          outline: 2px solid var(--services-accent);
+          outline-offset: 2px;
+        }
       }
 
       .services__modal-title {
@@ -109,6 +118,7 @@
         font-weight: $font-medium;
         margin-bottom: 1rem;
         text-align: center;
+        color: var(--services-text);
       }
 
       .services__modal-description {
@@ -116,22 +126,26 @@
         padding: 0 3.5rem;
         margin-bottom: 2rem;
         text-align: center;
+        color: var(--services-muted);
       }
 
       .services__modal-services {
         row-gap: 0.75rem;
+
         .services__modal-service {
           display: flex;
           align-items: center;
           column-gap: 0.5rem;
+          color: var(--services-text);
 
           .services__modal-icon {
-            color: $title-color;
+            color: var(--services-accent);
             font-size: 1.1rem;
           }
 
           .services__modal-info {
             font-size: $small-font-size;
+            color: var(--services-muted);
           }
         }
       }
@@ -147,29 +161,36 @@
   @media screen and (max-width: $max_mobile) {
     .services__container {
       grid-template-columns: repeat(2, 1fr);
+
       .services__content {
         padding: 3.5rem 0.5rem 1.25rem 1.5rem;
+
         .services__icon {
           font-size: 1.5rem;
         }
       }
     }
   }
+
   @media screen and (max-width: 576px) {
     .services__container {
       grid-template-columns: repeat(1, 1fr);
+
       .services__content {
       }
     }
+
     .services__modal {
       .services__modal-content {
         padding: 4.5rem 1.5rem 2.5rem;
+
         .services__modal-description {
           padding: 0;
         }
       }
     }
   }
+
   @media screen and (max-width: 350px) {
     .services__container {
       grid-template-columns: max-content;
@@ -180,3 +201,4 @@
     }
   }
 }
+
