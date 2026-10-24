@@ -68,6 +68,14 @@ src/
 4. **Backend API:**
    - The project expects a .NET backend with CORS enabled and endpoints for `/skills`, `/projects`, etc.
 
+## Search and Analytics
+
+- The production site is configured as `https://ihab-mahmoud.vercel.app/`.
+- `robots.txt` and `sitemap.xml` are copied to the deployment root during `ng build`.
+- Submit `https://ihab-mahmoud.vercel.app/sitemap.xml` in Google Search Console after deployment.
+- Add the GA4 measurement ID (`G-XXXXXXXXXX`) to `googleAnalyticsId` in `src/environments/environment.ts` before deploying. The app then records meaningful link and button clicks.
+- Search Console reports organic search performance after the property is verified; it does not collect arbitrary application events.
+
 ## 🛠️ Customization
 
 - **Theme:** Easily customize colors and fonts in `assets/scss/variables/`.
