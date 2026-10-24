@@ -1,36 +1,29 @@
-<footer class="dark:!bg-slate-900">
+<footer class="footer">
   <div class="footer__container container">
-    <h1 class="footer__title dark:!text-white">Ihab</h1>
+    <a href="#home" class="footer__logo">Ihab</a>
 
     <ul class="footer__list">
-      <li>
-        <a href="#about" class="footer__link dark:!text-white">About</a>
-      </li>
-      <li>
-        <a href="#skills" class="footer__link dark:!text-white">Skills</a>
-      </li>
-      <li>
-        <a href="#services" class="footer__link dark:!text-white">Services</a>
-      </li>
-      <li>
-        <a href="#projects" class="footer__link dark:!text-white">Projects</a>
-      </li>
+      <li><a href="#about" class="footer__link">About</a></li>
+      <li><a href="#skills" class="footer__link">Skills</a></li>
+      <li><a href="#services" class="footer__link">Services</a></li>
+      <li><a href="#projects" class="footer__link">Projects</a></li>
+      <li><a href="#contact" class="footer__link">Contact</a></li>
     </ul>
 
     <div class="footer__social">
       @for (item of footerSocialLinks; track item.link) {
       <a
         [href]="item.link"
-        class="footer__social-link dark:!text-white dark:hover:!text-slate-300"
+        class="footer__social-link"
         target="_blank"
+        rel="noreferrer"
+        aria-label="Social profile"
       >
-        <ng-icon [name]="item.svg"></ng-icon>
+        <ng-icon [name]="item.svg" aria-hidden="true"></ng-icon>
       </a>
       }
     </div>
 
-    <span class="footer__copy dark:!text-white"
-      >&#169; ihab Mahmoud. All rights reserved</span
-    >
+    <span class="footer__copy">© Ihab Mahmoud. All rights reserved.</span>
   </div>
 </footer>
