@@ -1,6 +1,6 @@
-<section class="qualification section">
-  <h2 class="section__title dark:!text-white">Qualification</h2>
-  <span class="section__subtitle dark:!text-slate-400">
+<section class="qualification section container">
+  <h2 class="section__title">Qualification</h2>
+  <span class="section__subtitle">
     My personal journey
   </span>
 
@@ -10,28 +10,30 @@
   <p class="data-state data-state--error" role="alert">{{ errorMessage }}</p>
   } @else {
   <div class="qualification__container">
-    <div class="qualification__tabs">
-      <div
-        class="qualification__button button__flex dark:!text-slate-300 dark:hover:!text-white"
-        [ngClass]="
-          activeTab === false ? 'qualification__active dark:!text-white' : ' '
-        "
+    <div class="qualification__tabs" role="tablist" aria-label="Qualification type">
+      <button
+        type="button"
+        class="qualification__button button__flex"
+        [class.qualification__active]="activeTab === false"
+        role="tab"
+        [attr.aria-selected]="activeTab === false"
         (click)="setActiveTab(false)"
       >
-        <ng-icon name="heroAcademicCap" class="qualification__icon"></ng-icon>
+        <ng-icon name="heroAcademicCap" class="qualification__icon" aria-hidden="true"></ng-icon>
         Education
-      </div>
+      </button>
 
-      <div
-        class="qualification__button button__flex dark:!text-slate-300 dark:hover:!text-white"
-        [ngClass]="
-          activeTab === true ? 'qualification__active dark:!text-white' : ''
-        "
+      <button
+        type="button"
+        class="qualification__button button__flex"
+        [class.qualification__active]="activeTab === true"
+        role="tab"
+        [attr.aria-selected]="activeTab === true"
         (click)="setActiveTab(true)"
       >
-        <ng-icon name="heroBriefcase" class="qualification__icon"></ng-icon>
+        <ng-icon name="heroBriefcase" class="qualification__icon" aria-hidden="true"></ng-icon>
         Experience
-      </div>
+      </button>
     </div>
 
     <div class="qualification__sections">
