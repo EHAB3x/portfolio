@@ -53,8 +53,8 @@
   .say__hello {
     border: 1px solid transparent;
     border-radius: 0.9rem;
-    background: linear-gradient(120deg, #6366f1, #7c3aed);
-    color: #ffffff;
+    background: linear-gradient(120deg, var(--color-6366f1), var(--color-7c3aed));
+    color: var(--color-ffffff);
     font-weight: 700;
     text-decoration: none;
 
