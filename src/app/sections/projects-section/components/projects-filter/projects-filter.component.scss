@@ -11,18 +11,30 @@
 
   .work__item {
     cursor: pointer;
-    color: $title-color;
-    padding: 0.25rem 0.75rem;
+    color: var(--work-muted);
+    padding: 0.4rem 0.9rem;
+    font: inherit;
     font-weight: $font-medium;
-    border-radius: 0.5rem;
+    border-radius: 0.6rem;
     text-transform: capitalize;
-    transition: 0.3s linear;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
     text-wrap: nowrap;
+    border: 1px solid transparent;
+    background: transparent;
 
-    &:hover,
+    &:hover {
+      color: var(--work-accent);
+      background: var(--work-accent-soft);
+      transform: translateY(-1px);
+    }
+
     &.active-work {
-      background-color: $title-color;
-      color: $container-color;
+      background: var(--work-accent);
+      color: #ffffff;
+      border-color: var(--work-accent);
     }
   }
 
@@ -33,6 +45,7 @@
 
   @media screen and (max-width: 350px) {
     column-gap: 0.25rem;
+
     .work__item {
       font-size: $small-font-size;
     }
@@ -40,9 +53,10 @@
 }
 
 .work__container {
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem;
   justify-content: center;
+
   @media screen and (max-width: 1190px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
@@ -51,7 +65,7 @@
   }
 
   @media screen and (max-width: $max_mobile) {
-    grid-template-columns: max-content;
+    grid-template-columns: minmax(0, 1fr);
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
@@ -60,3 +74,4 @@
     grid-template-columns: 1fr;
   }
 }
+
