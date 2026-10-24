@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ihab-mahmoud.vercel.app/sitemap.xml
