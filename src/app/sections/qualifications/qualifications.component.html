@@ -5,7 +5,7 @@
   </span>
 
   @if (loading) {
-  <app-loader label="Loading qualifications"></app-loader>
+  <app-loader label="Loading qualifications" data-aos="fade-up" data-aos-duration="600"></app-loader>
   } @else if (errorMessage) {
   <p class="data-state data-state--error" role="alert">{{ errorMessage }}</p>
   } @else {
@@ -40,10 +40,14 @@
       @if(activeTab === false){
       <app-qualification-data
         [qualifications]="educations"
+        data-aos="fade-up"
+        data-aos-duration="700"
       ></app-qualification-data>
       }@else {
       <app-qualification-data
         [qualifications]="experiences"
+        data-aos="fade-up"
+        data-aos-duration="700"
       ></app-qualification-data>
       }
     </div>

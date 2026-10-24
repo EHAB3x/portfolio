@@ -3,7 +3,7 @@
   <span class="section__subtitle">What I offer</span>
 
   @if (loading) {
-    <app-loader label="Loading services"></app-loader>
+    <app-loader label="Loading services" data-aos="fade-up" data-aos-duration="600"></app-loader>
   } @else if (errorMessage) {
     <p class="data-state data-state--error" role="alert">{{ errorMessage }}</p>
   } @else if (!services.length) {
