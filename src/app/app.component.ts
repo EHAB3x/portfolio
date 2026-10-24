@@ -9,6 +9,7 @@ import { QualificationsComponent } from "./sections/qualifications/qualification
 import { ProjectsSectionComponent } from "./sections/projects-section/projects-section.component";
 import { ContactSectionComponent } from "./sections/contact-section/contact-section.component";
 import { ThemeToggleComponent } from "./shared/theme-toggle/theme-toggle.component";
+import { AnalyticsService } from './core/services/analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -29,4 +30,20 @@ import { ThemeToggleComponent } from "./shared/theme-toggle/theme-toggle.compone
 })
 export class AppComponent {
   title = 'portfolio';
+
+  constructor(private readonly analyticsService: AnalyticsService) {}
+
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target;
+
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const interactiveElement = target.closest('a, button');
+
+    if (interactiveElement instanceof HTMLElement) {
+      this.analyticsService.trackClick(interactiveElement);
+    }
+  }
 }

@@ -1,14 +1,16 @@
-<app-theme-toggle></app-theme-toggle>
-<app-header></app-header>
-<div class="dark:bg-slate-800">
-  <div class="container mx-auto">
-    <app-hero-section></app-hero-section>
-    <app-about-section></app-about-section>
-    <app-skills-section></app-skills-section>
-    <app-services-section></app-services-section>
-    <app-qualifications></app-qualifications>
-    <app-projects-section></app-projects-section>
+<div (click)="onDocumentClick($event)">
+  <app-theme-toggle></app-theme-toggle>
+  <app-header></app-header>
+  <div class="dark:bg-slate-800">
+    <div class="container mx-auto">
+      <app-hero-section></app-hero-section>
+      <app-about-section></app-about-section>
+      <app-skills-section></app-skills-section>
+      <app-services-section></app-services-section>
+      <app-qualifications></app-qualifications>
+      <app-projects-section></app-projects-section>
+    </div>
+    <app-contact-section></app-contact-section>
+    <app-footer></app-footer>
   </div>
-  <app-contact-section></app-contact-section>
-  <app-footer></app-footer>
 </div>
