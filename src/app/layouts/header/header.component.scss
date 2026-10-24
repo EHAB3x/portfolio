@@ -45,8 +45,8 @@
         display: grid;
         place-items: center;
         border-radius: 0.6rem;
-        background: linear-gradient(135deg, var(--header-accent), #4f46e5);
-        color: #ffffff;
+        background: linear-gradient(135deg, var(--header-accent), var(--color-4f46e5));
+        color: var(--color-ffffff);
         font-size: 0.9rem;
         font-weight: 800;
       }
