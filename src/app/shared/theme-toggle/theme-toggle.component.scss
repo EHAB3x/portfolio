@@ -1,22 +1,56 @@
 @import "global";
+
 .theme {
-  z-index: 9999;
   position: fixed;
   top: 50%;
-  right: 20px;
-  color: $body-color;
-  cursor: pointer;
-  transition: 0.3s linear;
+  right: 1.25rem;
   transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
+  z-index: 9999;
+
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--theme-border);
+  border-radius: 0.75rem;
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  box-shadow: 0 8px 24px var(--theme-shadow);
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-50%) translateY(-2px);
+    color: var(--theme-accent);
+    box-shadow: 0 12px 28px var(--theme-shadow);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--theme-accent);
+    outline-offset: 3px;
+  }
+
+  ng-icon {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .theme {
-    top: unset;
-    bottom: 70px;
-    right: 10px;
-    transform: translateY(0);
+    top: auto;
+    bottom: 5rem;
+    right: 0.75rem;
+    transform: none;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
   }
 }
+
