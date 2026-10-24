@@ -5,61 +5,97 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
 
-    .contact__form {
-      background-color: $container-color;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      padding: 1.25rem;
-      border-radius: 1rem;
-      width: 40%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
+  .contact__form {
+    background: var(--contact-surface);
+    border: 1px solid var(--contact-border);
+    padding: 2rem;
+    border-radius: 1.25rem;
+    width: min(100%, 520px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    box-shadow: 0 12px 32px var(--contact-shadow);
+    color: var(--contact-text);
+  }
 
-      .contact__form-group {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1.5rem;
+  .contact__form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
 
-        .contact__form-control {
-          outline: 0;
-          background-color: $body-color;
-          padding: 0.75rem;
-          border-radius: 10px;
-          margin-top: 0.5rem;
-          resize: none;
-        }
+    .contact__label {
+      font-size: $small-font-size;
+      font-weight: $font-medium;
+      color: var(--contact-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact__form-control {
+      outline: 0;
+      background: var(--contact-bg);
+      color: var(--contact-text);
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--contact-border);
+      border-radius: 0.6rem;
+      margin-top: 0.25rem;
+      resize: vertical;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+      &::placeholder {
+        color: var(--contact-muted);
       }
-      .contact__form-button {
-        padding: 1rem;
-        width: 220px;
-        margin: 0 auto;
+
+      &:focus {
+        border-color: var(--contact-accent);
+        box-shadow: 0 0 0 3px var(--contact-accent-soft);
       }
     }
   }
+
+  .contact__error {
+    color: var(--contact-error);
+    font-size: $tiny-font-size;
+    margin-top: 0.4rem;
+  }
+
+  .contact__success {
+    color: var(--contact-success);
+    font-size: $small-font-size;
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+
+  .contact__form-button {
+    padding: 0.85rem 1rem;
+    width: 100%;
+    max-width: 260px;
+    margin: 0.5rem auto 0;
+  }
+
   @media screen and (max-width: $max_tablet) {
-    .contact__content {
-      .contact__form {
-        width: 70%;
-      }
+    .contact__form {
+      width: 70%;
     }
   }
+
   @media screen and (max-width: $max_mobile) {
-    .contact__content {
-      .contact__form {
-        width: 90%;
-      }
+    .contact__form {
+      width: 90%;
     }
   }
+
   @media screen and (max-width: 576px) {
-    .contact__content {
-      .contact__form {
-        .contact__form-button {
-          padding: 1rem;
-          width: 100%;
-          margin: 0 auto;
-        }
-      }
+    .contact__form {
+      padding: 1.5rem;
+    }
+
+    .contact__form-button {
+      width: 100%;
     }
   }
 }
+
