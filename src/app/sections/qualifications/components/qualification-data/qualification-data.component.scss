@@ -38,6 +38,8 @@
       background-color: var(--qual-data-accent);
       border-radius: 50%;
       box-shadow: 0 0 0 4px var(--qual-data-accent-soft, rgba(99, 102, 241, 0.15));
+      position: relative;
+      z-index: 9;
     }
 
     .qualification__line {
