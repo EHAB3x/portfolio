@@ -3,7 +3,7 @@ import { IAboutConstants } from "../interfaces/iabout-constants";
 export const aboutConstants : IAboutConstants[] = [
   {
     name: 'Experience',
-    desc: '1 Years Working',
+    desc: '2 Years Working',
     svg: 'featherAward',
   },
   {
