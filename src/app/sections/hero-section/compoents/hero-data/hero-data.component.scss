@@ -1,11 +1,22 @@
 @import "global";
+
 .home__data {
+  color: var(--hero-data-text);
+
   .home__title {
     font-size: $big-font-size;
     margin-bottom: 0.25rem;
     text-wrap: nowrap;
     display: flex;
     align-items: center;
+    color: var(--about-heading);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    span {
+      color: var(--about-accent);
+    }
 
     .home__hand {
       width: 38px;
@@ -20,12 +31,14 @@
     padding-left: 5.4rem;
     font-weight: $font-normal;
     margin-bottom: 1rem;
+    color: var(--hero-data-muted);
+
     &::before {
       content: "";
       position: absolute;
       width: 70px;
       height: 1px;
-      background-color: $text-color;
+      background-color: var(--hero-data-line);
       left: 0;
       top: 1rem;
     }
@@ -34,21 +47,57 @@
   .home__description {
     max-width: 400px;
     margin-bottom: 3rem;
+    color: var(--hero-data-muted);
   }
+
+  .say__hello {
+    border: 1px solid transparent;
+    border-radius: 0.9rem;
+    background: linear-gradient(120deg, #6366f1, #7c3aed);
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      filter 0.25s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.05);
+      box-shadow: 0 14px 28px rgba(99, 102, 241, 0.28);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--about-accent);
+      outline-offset: 4px;
+    }
+  }
+
   @media screen and (max-width: 992px) {
     .home__title {
       font-size: $h1-font-size;
+
       .home__hand {
         width: 26px;
         height: 26px;
       }
     }
   }
+
   @media screen and (max-width: $max_mobile) {
     .home__subtitle {
       padding-left: 3.75rem;
       margin-bottom: 1rem;
       font-size: $normal-font-size;
+
       &::before {
         width: 42px;
         top: 0.8rem;
@@ -60,9 +109,11 @@
       margin-bottom: 2.5rem;
     }
   }
+
   @media screen and (max-width: $max_small_mobile) {
     .home__title {
       font-size: $h2-font-size;
+
       .home__hand {
         width: 22px;
         height: 22px;
