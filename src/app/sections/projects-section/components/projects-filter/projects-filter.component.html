@@ -1,5 +1,5 @@
 @if (loading) {
-<app-loader label="Loading projects"></app-loader>
+<app-loader label="Loading projects" data-aos="fade-up" data-aos-duration="600"></app-loader>
 } @else if (errorMessage) {
 <p class="data-state data-state--error" role="alert">{{ errorMessage }}</p>
 } @else if (!filteredProjects?.length) {
@@ -22,7 +22,7 @@
 
 <div class="work__container grid">
   @for (item of filteredProjects; track $index) {
-  <app-project-card [item]="item"></app-project-card>
+  <app-project-card [item]="item" data-aos="fade-up" data-aos-duration="700"></app-project-card>
   }
 </div>
 }

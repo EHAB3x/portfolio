@@ -1,3 +1,4 @@
+import * as AOS from 'aos';
 import { Component, OnInit } from '@angular/core';
 import { ProjectsServiceService } from '../../../../core/services/projects-service.service';
 import { CommonModule } from '@angular/common';
@@ -40,6 +41,7 @@ export class ProjectsFilterComponent implements OnInit {
         this.projects = res;
         this.filteredProjects = this.projects;
         this.projectsLoading = false;
+        setTimeout(() => AOS.refresh(), 0);
       },
       error: () => {
         this.projectsLoading = false;
@@ -64,6 +66,7 @@ export class ProjectsFilterComponent implements OnInit {
         (project) => project.category === category
       );
     }
+    setTimeout(() => AOS.refresh(), 0);
   }
 
   get loading(): boolean {
