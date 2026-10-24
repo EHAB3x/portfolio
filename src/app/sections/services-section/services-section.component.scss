@@ -2,7 +2,7 @@
 
 .services {
   .services__container {
-    grid-template-columns: repeat(3, minmax(0, 270px));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-content: center;
     gap: 1.8rem;
 
@@ -15,7 +15,7 @@
       position: relative;
       border: 1px solid var(--services-border);
       background: var(--services-surface);
-      padding: 6rem 0 2rem 2.5rem;
+      padding: 4rem 2rem;
       border-radius: 1rem;
       color: var(--services-text);
 
@@ -154,7 +154,7 @@
 
   @media screen and (max-width: 992px) {
     .services__container {
-      grid-template-columns: repeat(3, 218px);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -163,10 +163,14 @@
       grid-template-columns: repeat(2, 1fr);
 
       .services__content {
-        padding: 3.5rem 0.5rem 1.25rem 1.5rem;
+        padding: 3.5rem 1.75rem;
 
         .services__icon {
           font-size: 1.5rem;
+        }
+
+        .services__title {
+          font-size: $normal-font-size;
         }
       }
     }
@@ -177,6 +181,10 @@
       grid-template-columns: repeat(1, 1fr);
 
       .services__content {
+        padding: 3rem 1.5rem;
+        .services__title {
+          font-size: $normal-font-size;
+        }
       }
     }
 
@@ -196,9 +204,8 @@
       grid-template-columns: max-content;
 
       .services__content {
-        padding-right: 6rem;
+        padding: 2rem 1rem;
       }
     }
   }
 }
-
