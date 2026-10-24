@@ -29,7 +29,7 @@
     .contact__label {
       position: absolute;
       left: 0.9rem;
-      top: 0.85rem;
+      top: 1.25rem;
       font-size: $small-font-size;
       font-weight: $font-medium;
       color: var(--contact-muted);
@@ -64,7 +64,7 @@
 
       &:focus + .contact__label,
       &:not(:placeholder-shown) + .contact__label {
-        top: -0.55rem;
+        top: -0.25rem;
         left: 0.7rem;
         font-size: $tiny-font-size;
         color: var(--contact-accent);
@@ -87,10 +87,35 @@
   }
 
   .contact__form-button {
+    cursor: pointer;
     padding: 0.85rem 1rem;
     width: 100%;
     max-width: 260px;
     margin: 0.5rem auto 0;
+
+    border: 1px solid transparent;
+    border-radius: 0.9rem;
+
+    background: linear-gradient(
+      120deg,
+      var(--color-6366f1),
+      var(--color-7c3aed)
+    );
+
+    &:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.05);
+      box-shadow: 0 14px 28px rgba(99, 102, 241, 0.28);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--about-accent);
+      outline-offset: 4px;
+    }
   }
 
   @media screen and (max-width: $max_tablet) {
@@ -115,4 +140,3 @@
     }
   }
 }
-
