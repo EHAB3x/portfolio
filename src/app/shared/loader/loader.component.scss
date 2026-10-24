@@ -6,17 +6,21 @@
   justify-content: center;
   gap: 0.75rem;
   min-height: 8rem;
-  color: $text-color;
+  color: var(--loader-text);
   font-size: $small-font-size;
-}
 
-.loader__spinner {
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 2px solid rgba(0, 0, 0, 0.15);
-  border-top-color: $title-color;
-  border-radius: 50%;
-  animation: loader-spin 0.8s linear infinite;
+  .loader__spinner {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--loader-track);
+    border-top-color: var(--loader-accent);
+    border-radius: 50%;
+    animation: loader-spin 0.8s linear infinite;
+  }
+
+  .loader__label {
+    font-weight: $font-medium;
+  }
 }
 
 @keyframes loader-spin {
@@ -25,8 +29,3 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .loader__spinner {
-    animation-duration: 1.8s;
-  }
-}
