@@ -5,17 +5,17 @@
   <div class="contact__content">
     <form [formGroup]="contactForm" class="contact__form" (submit)="sendEmail($event)">
       <div class="contact__form-group">
-        <label for="name" class="contact__label">Name</label>
         <input
           type="text"
           name="name"
           formControlName="name"
           class="contact__form-control"
           id="name"
-          placeholder="Enter your name"
+          placeholder=" "
           required
           aria-required="true"
         />
+        <label for="name" class="contact__label">Name</label>
         <div *ngIf="f['name'].touched && f['name'].invalid" class="contact__error" role="alert">
           <span *ngIf="f['name'].errors?.['required']">Name is required.</span>
           <span *ngIf="f['name'].errors?.['maxLength']">Name is too long.</span>
@@ -23,17 +23,17 @@
       </div>
 
       <div class="contact__form-group">
-        <label for="email" class="contact__label">Email address</label>
         <input
           type="email"
           name="email"
           formControlName="email"
           class="contact__form-control"
           id="email"
-          placeholder="Enter your email"
+          placeholder=" "
           required
           aria-required="true"
         />
+        <label for="email" class="contact__label">Email address</label>
         <div *ngIf="f['email'].touched && f['email'].invalid" class="contact__error" role="alert">
           <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
           <span *ngIf="f['email'].errors?.['email']">Invalid email address.</span>
@@ -41,17 +41,17 @@
       </div>
 
       <div class="contact__form-group">
-        <label for="subject" class="contact__label">Subject</label>
         <input
           type="text"
           name="subject"
           formControlName="subject"
           class="contact__form-control"
           id="subject"
-          placeholder="Enter email subject"
+          placeholder=" "
           required
           aria-required="true"
         />
+        <label for="subject" class="contact__label">Subject</label>
         <div *ngIf="f['subject'].touched && f['subject'].invalid" class="contact__error" role="alert">
           <span *ngIf="f['subject'].errors?.['required']">Subject is required.</span>
           <span *ngIf="f['subject'].errors?.['maxLength']">Subject is too long.</span>
@@ -59,17 +59,17 @@
       </div>
 
       <div class="contact__form-group">
-        <label for="email_body" class="contact__label">Message</label>
         <textarea
           name="email_body"
           formControlName="email_body"
           class="contact__form-control"
           id="email_body"
           rows="5"
-          placeholder="Write what you want."
+          placeholder=" "
           required
           aria-required="true"
         ></textarea>
+        <label for="email_body" class="contact__label">Message</label>
         <div *ngIf="f['email_body'].touched && f['email_body'].invalid" class="contact__error" role="alert">
           <span *ngIf="f['email_body'].errors?.['required']">Message is required.</span>
           <span *ngIf="f['email_body'].errors?.['maxLength']">Message is too long.</span>

@@ -21,22 +21,30 @@
   }
 
   .contact__form-group {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-bottom: 1.25rem;
 
     .contact__label {
+      position: absolute;
+      left: 0.9rem;
+      top: 0.85rem;
       font-size: $small-font-size;
       font-weight: $font-medium;
       color: var(--contact-muted);
-      margin-bottom: 0.4rem;
+      background: transparent;
+      padding: 0 0.25rem;
+      pointer-events: none;
+      transition: all 0.2s ease;
+      transform-origin: left top;
     }
 
     .contact__form-control {
       outline: 0;
       background: var(--contact-bg);
       color: var(--contact-text);
-      padding: 0.75rem 0.9rem;
+      padding: 0.85rem 0.9rem;
       border: 1px solid var(--contact-border);
       border-radius: 0.6rem;
       margin-top: 0.25rem;
@@ -46,12 +54,21 @@
         box-shadow 0.2s ease;
 
       &::placeholder {
-        color: var(--contact-muted);
+        color: transparent;
       }
 
       &:focus {
         border-color: var(--contact-accent);
         box-shadow: 0 0 0 3px var(--contact-accent-soft);
+      }
+
+      &:focus + .contact__label,
+      &:not(:placeholder-shown) + .contact__label {
+        top: -0.55rem;
+        left: 0.7rem;
+        font-size: $tiny-font-size;
+        color: var(--contact-accent);
+        background: var(--contact-surface);
       }
     }
   }
