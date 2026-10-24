@@ -1,7 +1,7 @@
 <section class="skills-section">
   @if (loading) {
     <div class="skills-state">
-      <app-loader label="Loading skills"></app-loader>
+      <app-loader label="Loading skills" data-aos="fade-up" data-aos-duration="600"></app-loader>
     </div>
   } @else if (errorMessage) {
     <div class="skills-state skills-state--error" role="alert">
