@@ -1,28 +1,86 @@
-@if (loading) {
-<app-loader label="Loading skills"></app-loader>
-} @else if (errorMessage) {
-<p class="data-state data-state--error" role="alert">{{ errorMessage }}</p>
-} @else if (!skills.length) {
-<p class="data-state">No skills available yet.</p>
-} @else {
-<div class="skills__content dark:!bg-slate-900">
-  <h3 class="skills__title dark:!text-white">Frontend Developer</h3>
-
-  <div class="skills__box">
-    <div class="skills__group">
-      @for (item of skills; track item.id) {
-      <div class="skills__data">
-        <ng-icon name="heroCheckBadge" class="dark:!text-white"></ng-icon>
-
-        <div>
-          <h3 class="skills__name dark:!text-white">{{ item.name }}</h3>
-          <span class="skills__level dark:!text-slate-300">{{
-            item.level
-          }}</span>
-        </div>
-      </div>
-      }
+<section class="skills-section">
+  @if (loading) {
+    <div class="skills-state">
+      <app-loader label="Loading skills"></app-loader>
     </div>
-  </div>
-</div>
-}
+  } @else if (errorMessage) {
+    <div class="skills-state skills-state--error" role="alert">
+      <span class="state-icon">!</span>
+      <p>{{ errorMessage }}</p>
+      <button class="retry-button" type="button" (click)="retry()">
+        Try again
+      </button>
+    </div>
+  } @else if (!skills.length) {
+    <div class="skills-state">
+      <span class="state-icon">✦</span>
+      <h3>No skills yet</h3>
+      <p>Skills will appear here once they become available.</p>
+    </div>
+  } @else {
+    <div class="skills-panel">
+      <!-- Section heading -->
+      <header class="skills-header">
+        <div class="skills-heading">
+          <span class="skills-eyebrow">
+            <span class="eyebrow-dot"></span>
+            WHAT I WORK WITH
+          </span>
+
+          <h2 class="skills-title">
+            My <span class="title-accent">Tech Stack</span>
+          </h2>
+
+          <p class="skills-description">
+            Technologies and tools I use to build modern, scalable, and engaging
+            web experiences.
+          </p>
+        </div>
+
+        <div class="skills-count" aria-label="Total skills">
+          <span class="count-number">{{ skills.length }}</span>
+          <span class="count-label">
+            {{ skills.length === 1 ? "SKILL" : "SKILLS" }}
+            <br />
+            & DISCIPLINES
+          </span>
+        </div>
+      </header>
+
+      <!-- Skills grid -->
+      <div class="skills-grid">
+        @for (item of skills; track item.id; let i = $index) {
+          <article class="skill-card" [style.--item-index]="i">
+            <div class="card-top">
+              <span class="skill-index">
+                {{ (i + 1).toString().padStart(2, "0") }}
+              </span>
+
+              <span class="skill-check" aria-hidden="true">
+                <ng-icon name="heroCheckBadge"></ng-icon>
+              </span>
+            </div>
+
+            <div class="skill-info">
+              <h3 class="skill-name">{{ item.name }}</h3>
+
+              <div class="skill-meta">
+                <span class="skill-level-dot"></span>
+                <span class="skill-level">{{ item.level }}</span>
+              </div>
+            </div>
+
+            <div class="card-decoration" aria-hidden="true"></div>
+          </article>
+        }
+      </div>
+
+      <!-- Bottom accent -->
+      <footer class="skills-footer">
+        <span class="footer-line"></span>
+        <p>Always learning. Always building.</p>
+        <span class="footer-sparkle" aria-hidden="true">✳</span>
+      </footer>
+    </div>
+  }
+</section>
